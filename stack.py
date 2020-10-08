@@ -31,17 +31,14 @@ class Stack:
           print(val, end=' ')
       print("\n")
 
-ask = int(input("Length of stack: "))
-testStack = Stack(ask)
-print(testStack.isEmpty())
-print(testStack.isFull())
-testStack.push(1)
-testStack.push(2)
-testStack.push(3)
-testStack.push(14)
-testStack.push(15)
-testStack.push(16)
-testStack.printStack()
-testStack.pop()
-testStack.printStack()
-print(testStack.peek())
+def main():
+    ask = int(input("Length of stack: "))
+    stack = Stack(ask)
+    for i in range(10):
+        stack.push(i)
+    stack.pop()
+    stack.printStack()
+    print(stack.peek())
+
+if __name__  == "__main__":
+    main()
