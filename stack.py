@@ -1,35 +1,38 @@
+# Test 3rd June 2024
 class Stack:
-  def __init__(self, size):
-    self._size = size
-    self._arr = []
-    self._head = -1
+    def __init__(self, size):
+        self._size = size
+        self._arr = []
+        self._head = -1
 
-  def isFull(self):
-    return len(self._arr) == self._size
-  def isEmpty(self):
-    return self._head == -1
+    def isFull(self):
+        return len(self._arr) == self._size
 
-  def push(self, value):
-      if not self.isFull():
-          self._arr.append(value)
-          self._head += 1
-      else:
-          print("\nSTACK FULL\n")
+    def isEmpty(self):
+        return self._head == -1
 
-  def pop(self):
-      if not self.isEmpty():
-          self._arr = self._arr[:-1]
-          self._head -= 1
-      else:
-          print("\nSTACK EMPTY\n")
+    def push(self, value):
+        if not self.isFull():
+            self._arr.append(value)
+            self._head += 1
+        else:
+            print("\nSTACK FULL\n")
 
-  def peek(self):
-      return self._arr[-1] if not self.isEmpty() else "STACK EMPTY"
+    def pop(self):
+        if not self.isEmpty():
+            self._arr = self._arr[:-1]
+            self._head -= 1
+        else:
+            print("\nSTACK EMPTY\n")
 
-  def printStack(self):
-      for val in self._arr:
-          print(val, end=' ')
-      print("\n")
+    def peek(self):
+        return self._arr[-1] if not self.isEmpty() else "STACK EMPTY"
+
+    def printStack(self):
+        for val in self._arr:
+            print(val, end=" ")
+        print("\n")
+
 
 def main():
     ask = int(input("Length of stack: "))
@@ -40,5 +43,6 @@ def main():
     stack.printStack()
     print(stack.peek())
 
-if __name__  == "__main__":
+
+if __name__ == "__main__":
     main()
